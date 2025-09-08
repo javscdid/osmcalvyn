@@ -28,17 +28,19 @@
 
     /* Logo */
     .logo {
-      width: 180px;
+      width: 25vw;  /* Lebih besar & responsif */
+      max-width: 260px;
+      min-width: 160px;
       opacity: 0;
-      transform: translateY(-80px);
+      transform: translateY(-100px);
       animation: slideDown 1.5s ease forwards;
     }
 
     /* Server Name */
     .server-name {
-      font-size: 2.5em;
-      font-weight: 600;
-      margin-top: 20px;
+      font-size: 5vw; /* Responsive text */
+      font-weight: 700;
+      margin-top: 25px;
       letter-spacing: 2px;
       opacity: 0;
       animation: fadeIn 1.5s ease forwards;
@@ -48,17 +50,17 @@
     /* Button */
     .play-btn {
       display: inline-block;
-      margin-top: 40px;
-      padding: 14px 40px;
-      font-size: 1.2em;
+      margin-top: 50px;
+      padding: 18px 50px;
+      font-size: 1.5em;
       font-weight: bold;
       color: #000;
       background: #fff;
       border: none;
-      border-radius: 30px;
+      border-radius: 40px;
       cursor: pointer;
       text-decoration: none;
-      box-shadow: 0 4px 15px rgba(255,255,255,0.2);
+      box-shadow: 0 6px 20px rgba(255,255,255,0.2);
       opacity: 0;
       animation: fadeIn 1.5s ease forwards;
       animation-delay: 2.5s;
@@ -67,8 +69,8 @@
 
     .play-btn:hover {
       background: #f1f1f1;
-      transform: scale(1.05);
-      box-shadow: 0 6px 20px rgba(255,255,255,0.3);
+      transform: scale(1.08);
+      box-shadow: 0 8px 25px rgba(255,255,255,0.3);
     }
 
     /* Animations */
@@ -82,6 +84,20 @@
     @keyframes fadeIn {
       to {
         opacity: 1;
+      }
+    }
+
+    /* Mobile optimization */
+    @media (max-width: 600px) {
+      .logo {
+        width: 45vw;
+      }
+      .server-name {
+        font-size: 8vw;
+      }
+      .play-btn {
+        padding: 16px 40px;
+        font-size: 1.2em;
       }
     }
   </style>
