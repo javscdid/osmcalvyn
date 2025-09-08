@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>GTPS - Server Host & Tutorial</title>
 
-  <!-- Google Font & Font Awesome -->
+  <!-- font & icons (Poppins optional if style.css expects it) -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  
-  <!-- Style CSS -->
+
+  <!-- your existing style.css (keep the final version you agreed on) -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -27,7 +27,6 @@
       Ayo gabung sekarang dan rasakan keseruannya!
     </p>
 
-    <!-- Social Buttons Horizontal -->
     <div class="social-buttons" aria-label="Social">
       <a href="https://discord.gg/your-link" class="discord-btn btn" target="_blank" rel="noopener">
         <i class="fab fa-discord"></i> Join Discord
@@ -38,17 +37,53 @@
     </div>
   </section>
 
-  <!-- TUTORIAL -->
-  <section class="how-to-play">
-    <h3>Tutorial</h3>
-    <div class="tutorial-grid">
+  <!-- SERVER HOST -->
+  <section class="server-host section-left" aria-labelledby="host-title">
+    <h2 id="host-title">Server Host</h2>
+
+    <div class="host-links" style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px;">
+      <!-- host links (open in new tab) -->
+      <a href="https://aws.amazon.com/" target="_blank" rel="noopener">Amazon AWS</a>
+      <a href="https://azure.microsoft.com/" target="_blank" rel="noopener">Microsoft Azure</a>
+      <a href="https://cloud.google.com/" target="_blank" rel="noopener">Google Cloud</a>
+      <a href="https://www.vultr.com/" target="_blank" rel="noopener">Vultr VPS</a>
+      <a href="https://www.digitalocean.com/" target="_blank" rel="noopener">DigitalOcean</a>
+    </div>
+
+    <h3 style="margin-top:10px;">Host Links (quick copy)</h3>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-top:8px;">
+      <!-- quick host copy examples -->
+      <div class="host-box" style="display:flex;justify-content:space-between;align-items:center;">
+        <span id="host-aws">https://aws.amazon.com/marketplace</span>
+        <button onclick="copyText('host-aws')" aria-label="Copy AWS link">Copy</button>
+      </div>
+
+      <div class="host-box" style="display:flex;justify-content:space-between;align-items:center;">
+        <span id="host-vultr">https://www.vultr.com/products/cloud-compute/</span>
+        <button onclick="copyText('host-vultr')" aria-label="Copy Vultr link">Copy</button>
+      </div>
+
+      <div class="host-box" style="display:flex;justify-content:space-between;align-items:center;">
+        <span id="host-do">https://www.digitalocean.com/products/droplets/</span>
+        <button onclick="copyText('host-do')" aria-label="Copy DigitalOcean link">Copy</button>
+      </div>
+    </div>
+
+    <!-- Tutorial heading -->
+    <h3 style="margin-top:18px;">Tutorial</h3>
+
+    <!-- TUTORIALS -->
+    <div class="tutorial-grid" style="margin-top:10px;">
       <!-- ANDROID POWER TUNNEL -->
       <div class="tutorial-card" aria-labelledby="and-title">
         <h3 id="and-title"><i class="fab fa-android"></i> Android (PowerTunnel)</h3>
+
+        <!-- host box with copy -->
         <div class="host-box" style="display:flex;justify-content:space-between;align-items:center;">
           <span id="android-host">https://gtpshost.com/raw/OverallPS-GH</span>
           <button onclick="copyText('android-host')" aria-label="Copy Android host">Copy</button>
         </div>
+
         <ul>
           <li><b>Download</b> aplikasi PowerTunnel (APK) dari sumber tepercaya.</li>
           <li>Buka PowerTunnel → menu (≡) → <b>Host Settings</b>.</li>
@@ -61,10 +96,12 @@
       <!-- iOS SURGE 5 -->
       <div class="tutorial-card" aria-labelledby="ios-title">
         <h3 id="ios-title"><i class="fab fa-apple"></i> iOS (Surge 5)</h3>
+
         <div class="host-box" style="display:flex;justify-content:space-between;align-items:center;">
           <span id="ios-host">https://gtpshost.com/ios/OverallPS-GH</span>
           <button onclick="copyText('ios-host')" aria-label="Copy iOS host">Copy</button>
         </div>
+
         <ul>
           <li>Install <b>Surge 5</b> dari App Store.</li>
           <li>Buka Surge → Import / Edit konfigurasi → paste host URL yang disalin.</li>
@@ -76,10 +113,12 @@
       <!-- PC / LAPTOP -->
       <div class="tutorial-card" aria-labelledby="pc-title">
         <h3 id="pc-title"><i class="fas fa-desktop"></i> PC / Laptop</h3>
+
         <div class="host-box" style="display:flex;justify-content:space-between;align-items:center;">
           <span id="pc-ip">yourserverip.com:17091</span>
           <button onclick="copyText('pc-ip')" aria-label="Copy PC IP">Copy</button>
         </div>
+
         <ul>
           <li>Buka folder sistem Growtopia atau folder network tool yang kamu gunakan.</li>
           <li>Edit file <code>hosts</code> (Windows: <code>C:\Windows\System32\drivers\etc\hosts</code>).</li>
@@ -111,13 +150,14 @@
     <p>&copy; 2025 Nama Server GTPS. All rights reserved.</p>
   </footer>
 
-  <!-- COPY SCRIPT -->
+  <!-- COPY SCRIPT (re-usable) -->
   <script>
     function copyText(id) {
       const el = document.getElementById(id);
       if (!el) return alert('Nothing to copy.');
       const text = el.innerText.trim();
       if (!navigator.clipboard) {
+        // fallback
         const ta = document.createElement('textarea');
         ta.value = text;
         document.body.appendChild(ta);
@@ -128,8 +168,13 @@
         return;
       }
       navigator.clipboard.writeText(text).then(() => {
+        // small non-blocking feedback
+        const orig = document.activeElement;
         alert('Copied: ' + text);
-      }, () => { alert('Copy failed'); });
+        if (orig) orig.focus();
+      }, () => {
+        alert('Copy failed');
+      });
     }
   </script>
 </body>
