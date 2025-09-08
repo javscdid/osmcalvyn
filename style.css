@@ -1,17 +1,25 @@
-/* Global */
+/* ====== GLOBAL ====== */
 body {
   margin: 0;
   padding: 0;
-  background: #000;
-  color: #fff;
   font-family: 'Poppins', sans-serif;
-  overflow-x: hidden;
+  background-color: #111;
+  color: #fff;
+}
+
+h2 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1em;
   line-height: 1.6;
 }
 
-/* Container (index.html) */
-.container {
-  min-height: 100vh;
+/* ====== INDEX (FULLSCREEN) ====== */
+.index-header {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,175 +27,150 @@ body {
   text-align: center;
 }
 
-/* Logo */
-.logo {
-  width: 280px;
-  height: 280px;
+.index-logo {
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 30px;
-  animation: slideDown 1s ease-out;
+  margin-bottom: 20px;
 }
 
-/* Nama server */
+.index-server-name {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.play-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  font-size: 1.2em;
+  font-weight: bold;
+  border-radius: 10px;
+  background: #fff;
+  color: #111;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.play-btn:hover {
+  background: #ddd;
+}
+
+/* ====== GTPS HEADER (Kecil di atas) ====== */
+.header-small {
+  text-align: center;
+  padding: 40px 20px 20px;
+}
+
+.logo-small {
+  width: 120px;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
 .server-name {
-  font-size: 3.5em;
-  font-weight: 700;
-  margin-bottom: 30px;
+  font-size: 2em;
+  font-weight: bold;
   color: #fff;
-  animation: fadeIn 2s ease forwards;
-  animation-delay: 0.5s;
-  opacity: 0;
 }
 
-/* Tombol umum */
+/* ====== SERVER DESCRIPTION ====== */
+.description {
+  padding: 20px 40px;
+  line-height: 1.6;
+}
+
+.description h2 {
+  margin-bottom: 10px;
+}
+
+.description p {
+  margin-bottom: 15px;
+}
+
+/* Tombol Discord & WhatsApp */
+.social-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
 .btn {
   display: inline-block;
-  padding: 14px 40px;
-  border-radius: 50px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  color: white;
   font-weight: 600;
-  font-size: 1.1em;
   text-decoration: none;
-  color: #fff;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-}
-.btn i {
-  margin-right: 8px;
-  font-size: 1.2em;
-  vertical-align: middle;
+  transition: 0.3s;
 }
 
-/* Tombol Play */
-.play-btn {
-  background: linear-gradient(135deg, #ffffff, #dcdcdc);
-  color: #000;
-}
-.play-btn:hover {
-  background: linear-gradient(135deg, #f2f2f2, #cfcfcf);
-  transform: translateY(-2px);
-}
-
-/* Discord */
 .discord-btn {
-  background: linear-gradient(135deg, #5865F2, #404EED);
-}
-.discord-btn:hover {
-  background: linear-gradient(135deg, #4752C4, #2c37a0);
-  transform: translateY(-2px);
+  background-color: #5865F2;
 }
 
-/* WhatsApp */
 .whatsapp-btn {
-  background: linear-gradient(135deg, #25D366, #128C7E);
-}
-.whatsapp-btn:hover {
-  background: linear-gradient(135deg, #1DA851, #0e5e4b);
-  transform: translateY(-2px);
+  background-color: #25D366;
 }
 
-/* Header (gtps.html) */
-.header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.btn:hover {
+  opacity: 0.85;
+}
+
+/* ====== HOW TO PLAY ====== */
+.how-to-play {
+  padding: 30px 40px;
+}
+
+.how-to-play h2 {
+  margin-bottom: 15px;
+}
+
+.tutorial-card {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.tutorial-card h3 {
+  margin-bottom: 5px;
+  font-size: 1.2em;
+}
+
+/* ====== FIND US ====== */
+.find-us {
   text-align: center;
   padding: 40px 20px;
 }
 
-/* Section rata kiri */
-.left-align {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 20px;
-  text-align: left;
-}
-
-/* Judul section */
-section h2 {
-  font-size: 2.2em;
-  font-weight: 700;
-  margin-bottom: 15px;
-  color: #fff;
-}
-
-/* Isi teks section */
-section p {
-  font-size: 1em;
-  color: #ccc;
-}
-
-/* How to Play cards */
-.tutorials {
-  display: grid;
-  gap: 20px;
-}
-.tutorial-card {
-  background: #1a1a1a;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.4);
-}
-.tutorial-card h3 {
-  margin-bottom: 10px;
-  font-size: 1.3em;
-  color: #fff;
-}
-.tutorial-card p {
-  font-size: 0.95em;
-  color: #ddd;
-}
-
-/* Find Us */
-.find-us {
-  text-align: center;
-  margin: 60px auto;
-}
 .find-buttons {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
   gap: 15px;
+  flex-wrap: wrap;
 }
+
 .find-btn {
-  display: inline-block;
   background: #fff;
   color: #000;
-  padding: 12px 28px;
-  border-radius: 30px;
-  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 10px;
   text-decoration: none;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  transition: all 0.3s ease;
+  font-weight: 600;
+  transition: 0.3s;
 }
-.find-btn i {
-  margin-right: 8px;
-}
+
 .find-btn:hover {
-  transform: translateY(-3px);
-  background: #f4f4f4;
+  background: #ddd;
 }
 
-/* Footer */
-.footer {
-  margin-top: 60px;
-  padding: 20px;
+/* ====== FOOTER ====== */
+footer {
   text-align: center;
-  background: #111;
-  border-top: 1px solid #333;
-  font-size: 0.95em;
-  font-weight: 400;
-  color: #aaa;
-}
-
-/* Animations */
-@keyframes slideDown {
-  from { transform: translateY(-50px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  padding: 20px;
+  font-size: 0.9em;
+  background: rgba(0, 0, 0, 0.3);
+  margin-top: 30px;
 }
