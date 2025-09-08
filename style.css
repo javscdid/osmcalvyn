@@ -1,100 +1,66 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background: #000;
-  color: #fff;
+/* Header full screen */
+.header {
+  min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  font-family: "Poppins", sans-serif;
-  overflow: hidden;
-}
-
-.container {
+  padding: 40px 20px;
   text-align: center;
 }
 
-/* Logo bulat */
-.logo {
-  width: 35vw;   /* besar */
-  max-width: 400px;
-  min-width: 200px;
-  border-radius: 50%;  /* bikin bulat */
-  object-fit: cover;   /* biar gak gepeng */
-  box-shadow: 0 8px 30px rgba(255,255,255,0.2);
-  opacity: 0;
-  transform: translateY(-120px);
-  animation: slideDown 1.5s ease forwards;
+/* Section style */
+.section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-/* Server Name */
-.server-name {
-  font-size: 6vw;
-  font-weight: 700;
-  margin-top: 30px;
-  letter-spacing: 3px;
-  opacity: 0;
-  animation: fadeIn 1.5s ease forwards;
-  animation-delay: 1.2s;
+.section h2 {
+  font-size: 2.2em;
+  margin-bottom: 30px;
 }
 
-/* Button */
-.play-btn {
-  display: inline-block;
+/* Card tutorial */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: #111;
+  border-radius: 15px;
+  padding: 25px;
+  text-align: left;
+  box-shadow: 0 5px 15px rgba(255,255,255,0.05);
+  transition: 0.3s;
+}
+
+.card h3 {
+  margin-bottom: 15px;
+  font-size: 1.4em;
+  color: #fff;
+}
+
+.card ol {
+  margin-left: 20px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(255,255,255,0.1);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #000;
+  color: #555;
+  font-size: 0.9em;
   margin-top: 60px;
-  padding: 22px 70px;
-  font-size: 2em;
-  font-weight: bold;
-  color: #000;
-  background: #fff;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  text-decoration: none;
-  box-shadow: 0 8px 30px rgba(255,255,255,0.25);
-  opacity: 0;
-  animation: fadeIn 1.5s ease forwards;
-  animation-delay: 2.5s;
-  transition: all 0.3s ease;
-}
-
-.play-btn:hover {
-  background: #f1f1f1;
-  transform: scale(1.1);
-  box-shadow: 0 10px 35px rgba(255,255,255,0.35);
-}
-
-/* Animations */
-@keyframes slideDown {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-/* Mobile optimization */
-@media (max-width: 600px) {
-  .logo {
-    width: 60vw;
-    max-width: 320px;
-  }
-  .server-name {
-    font-size: 10vw;
-  }
-  .play-btn {
-    padding: 18px 50px;
-    font-size: 1.6em;
-  }
 }
