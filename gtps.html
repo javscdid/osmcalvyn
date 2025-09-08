@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>GTPS - Server Host & Tutorial</title>
 
-  <!-- font & icons (Poppins optional if style.css expects it) -->
+  <!-- Google Font & Font Awesome -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <!-- your existing style.css (keep the final version you agreed on) -->
+  
+  <!-- Style CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -27,6 +27,7 @@
       Ayo gabung sekarang dan rasakan keseruannya!
     </p>
 
+    <!-- Social Buttons Horizontal -->
     <div class="social-buttons" aria-label="Social">
       <a href="https://discord.gg/your-link" class="discord-btn btn" target="_blank" rel="noopener">
         <i class="fab fa-discord"></i> Join Discord
@@ -37,22 +38,17 @@
     </div>
   </section>
 
-
-    <!-- Tutorial heading -->
-    <h3 style="margin-top:18px;">Tutorial</h3>
-
-    <!-- TUTORIALS -->
-    <div class="tutorial-grid" style="margin-top:10px;">
+  <!-- TUTORIAL -->
+  <section class="how-to-play">
+    <h3>Tutorial</h3>
+    <div class="tutorial-grid">
       <!-- ANDROID POWER TUNNEL -->
       <div class="tutorial-card" aria-labelledby="and-title">
         <h3 id="and-title"><i class="fab fa-android"></i> Android (PowerTunnel)</h3>
-
-        <!-- host box with copy -->
         <div class="host-box" style="display:flex;justify-content:space-between;align-items:center;">
           <span id="android-host">https://gtpshost.com/raw/OverallPS-GH</span>
           <button onclick="copyText('android-host')" aria-label="Copy Android host">Copy</button>
         </div>
-
         <ul>
           <li><b>Download</b> aplikasi PowerTunnel (APK) dari sumber tepercaya.</li>
           <li>Buka PowerTunnel → menu (≡) → <b>Host Settings</b>.</li>
@@ -65,12 +61,10 @@
       <!-- iOS SURGE 5 -->
       <div class="tutorial-card" aria-labelledby="ios-title">
         <h3 id="ios-title"><i class="fab fa-apple"></i> iOS (Surge 5)</h3>
-
         <div class="host-box" style="display:flex;justify-content:space-between;align-items:center;">
           <span id="ios-host">https://gtpshost.com/ios/OverallPS-GH</span>
           <button onclick="copyText('ios-host')" aria-label="Copy iOS host">Copy</button>
         </div>
-
         <ul>
           <li>Install <b>Surge 5</b> dari App Store.</li>
           <li>Buka Surge → Import / Edit konfigurasi → paste host URL yang disalin.</li>
@@ -82,12 +76,10 @@
       <!-- PC / LAPTOP -->
       <div class="tutorial-card" aria-labelledby="pc-title">
         <h3 id="pc-title"><i class="fas fa-desktop"></i> PC / Laptop</h3>
-
         <div class="host-box" style="display:flex;justify-content:space-between;align-items:center;">
           <span id="pc-ip">yourserverip.com:17091</span>
           <button onclick="copyText('pc-ip')" aria-label="Copy PC IP">Copy</button>
         </div>
-
         <ul>
           <li>Buka folder sistem Growtopia atau folder network tool yang kamu gunakan.</li>
           <li>Edit file <code>hosts</code> (Windows: <code>C:\Windows\System32\drivers\etc\hosts</code>).</li>
@@ -119,14 +111,13 @@
     <p>&copy; 2025 Nama Server GTPS. All rights reserved.</p>
   </footer>
 
-  <!-- COPY SCRIPT (re-usable) -->
+  <!-- COPY SCRIPT -->
   <script>
     function copyText(id) {
       const el = document.getElementById(id);
       if (!el) return alert('Nothing to copy.');
       const text = el.innerText.trim();
       if (!navigator.clipboard) {
-        // fallback
         const ta = document.createElement('textarea');
         ta.value = text;
         document.body.appendChild(ta);
@@ -137,13 +128,8 @@
         return;
       }
       navigator.clipboard.writeText(text).then(() => {
-        // small non-blocking feedback
-        const orig = document.activeElement;
         alert('Copied: ' + text);
-        if (orig) orig.focus();
-      }, () => {
-        alert('Copy failed');
-      });
+      }, () => { alert('Copy failed'); });
     }
   </script>
 </body>
