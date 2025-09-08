@@ -1,16 +1,17 @@
-/* Reset dasar */
+/* Global */
 body {
   margin: 0;
   padding: 0;
   background: #000;
   color: #fff;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
+  line-height: 1.6;
 }
 
-/* Container utama */
+/* Container (index.html) */
 .container {
-  min-height: 100vh; /* penuh 1 layar */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,51 +19,161 @@ body {
   text-align: center;
 }
 
-/* Logo server */
+/* Logo */
 .logo {
-  width: 350px;   /* lebih besar */
-  height: 350px;
-  border-radius: 50%; /* bulat */
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   animation: slideDown 1s ease-out;
 }
 
 /* Nama server */
 .server-name {
-  font-size: 4em;  /* jauh lebih besar */
-  font-weight: bold;
-  margin-bottom: 40px;
-  opacity: 0;
+  font-size: 3.5em;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #fff;
   animation: fadeIn 2s ease forwards;
   animation-delay: 0.5s;
+  opacity: 0;
 }
 
 /* Tombol Play */
 .play-btn {
-  padding: 22px 50px;       /* super besar */
+  padding: 18px 45px;
   background: #fff;
   color: #000;
   border-radius: 50px;
   text-decoration: none;
-  font-weight: bold;
-  font-size: 1.6em;         /* font lebih besar */
+  font-weight: 600;
+  font-size: 1.4em;
   transition: 0.3s;
-  opacity: 0;
   animation: fadeIn 2s ease forwards;
   animation-delay: 1s;
+  opacity: 0;
 }
-
 .play-btn:hover {
   background: #ddd;
 }
 
-/* Animasi */
+/* Header (gtps.html) */
+.header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+/* Description */
+.description {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #ddd;
+}
+.description b {
+  color: #fff;
+}
+
+/* Social Buttons */
+.social-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.discord-btn, .whatsapp-btn {
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1em;
+  color: #fff;
+  transition: 0.3s;
+}
+.discord-btn {
+  background: #5865F2;
+}
+.discord-btn:hover {
+  background: #4752C4;
+}
+.whatsapp-btn {
+  background: #25D366;
+}
+.whatsapp-btn:hover {
+  background: #1DA851;
+}
+
+/* Section titles */
+section h2 {
+  font-size: 2.2em;
+  font-weight: 600;
+  margin-bottom: 25px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* Tutorial cards */
+.tutorial-card {
+  background: #111;
+  padding: 20px;
+  margin: 15px auto;
+  border-radius: 10px;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+.tutorial-card h3 {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+/* Links section */
+.links {
+  margin: 60px auto;
+  text-align: center;
+}
+.links ul {
+  list-style: none;
+  padding: 0;
+}
+.links li {
+  margin: 10px 0;
+}
+.links a {
+  color: #00bfff;
+  text-decoration: none;
+  font-weight: 600;
+}
+.links a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+  margin-top: 60px;
+  padding: 20px;
+  text-align: center;
+  background: #111;
+  border-top: 1px solid #333;
+  font-size: 0.95em;
+  font-weight: 400;
+  color: #aaa;
+}
+
+/* Animations */
 @keyframes slideDown {
   from { transform: translateY(-50px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
-
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
