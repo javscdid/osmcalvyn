@@ -1,7 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Server Intro</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #000;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: "Poppins", sans-serif;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    /* Logo */
+    .logo {
+      width: 180px;
+      opacity: 0;
+      transform: translateY(-80px);
+      animation: slideDown 1.5s ease forwards;
+    }
+
+    /* Server Name */
+    .server-name {
+      font-size: 2.5em;
+      font-weight: 600;
+      margin-top: 20px;
+      letter-spacing: 2px;
+      opacity: 0;
+      animation: fadeIn 1.5s ease forwards;
+      animation-delay: 1.2s;
+    }
+
+    /* Button */
+    .play-btn {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 14px 40px;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #000;
+      background: #fff;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(255,255,255,0.2);
+      opacity: 0;
+      animation: fadeIn 1.5s ease forwards;
+      animation-delay: 2.5s;
+      transition: all 0.3s ease;
+    }
+
+    .play-btn:hover {
+      background: #f1f1f1;
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(255,255,255,0.3);
+    }
+
+    /* Animations */
+    @keyframes slideDown {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
 </head>
 <body>
-  OSM By CalvynGTPS
-  </body>
-  </html>
+  <div class="container">
+    <!-- Ganti src logo sesuai logo server -->
+    <img src="logo.png" alt="Server Logo" class="logo">
+    <div class="server-name">Nama Server</div>
+    <a href="#" class="play-btn">Play Server</a>
+  </div>
+</body>
+</html>
