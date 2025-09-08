@@ -2,97 +2,75 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Overall Private Server</title>
+  <title>GTPS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
   <!-- Header -->
-  <header>
-    <img src="logo.png" alt="Server Logo" class="logo">
-    <h1>Overall Private Server</h1>
+  <header class="header-small">
+    <img src="logo.png" alt="Server Logo" class="logo-small">
+    <div class="server-name">Nama Server</div>
   </header>
 
   <!-- Server Description -->
-  <section class="description">
+  <section class="description section-left">
     <h2>Server Description</h2>
     <p>
-      Overall Private Server adalah GTPS seru dengan fitur unik, komunitas aktif, 
-      dan gameplay menyenangkan. Bergabunglah sekarang dan nikmati pengalaman berbeda!
+      Selamat datang di <b>Nama Server GTPS</b>!  
+      Server ini hadir dengan fitur seru, komunitas aktif, dan update rutin.  
+      Ayo gabung sekarang dan rasakan keseruannya!
     </p>
+
+    <div class="social-buttons">
+      <a href="https://discord.gg/your-link" class="discord-btn btn">
+        <i class="fab fa-discord"></i> Join Discord
+      </a>
+      <a href="https://chat.whatsapp.com/your-link" class="whatsapp-btn btn">
+        <i class="fab fa-whatsapp"></i> Join WhatsApp
+      </a>
+    </div>
   </section>
 
   <!-- How to Play -->
-  <section class="how-to-play">
+  <section class="how-to-play section-left">
     <h2>How to Play</h2>
-
-    <!-- Android -->
-    <div class="tutorial-card">
-      <h3>Android (PowerTunnel)</h3>
-      <div class="host-box">
-        <span id="android-link">https://gtpshost.com/raw/OverallPS-GH</span>
-        <button onclick="copyText('android-link')">Copy</button>
+    <div class="tutorial-grid">
+      <div class="tutorial-card">
+        <h3><i class="fab fa-android"></i> Android</h3>
+        <p>Gunakan <b>PowerTunnel</b> + <b>Virtual Host</b> untuk mengakses server.</p>
       </div>
-      <ul>
-        <li>Download aplikasi PowerTunnel + Virtual Host.</li>
-        <li>Salin host URL di atas, lalu tempel di Host Settings.</li>
-        <li>Atur update period ke <b>on start</b>.</li>
-        <li>Buka Growtopia dan mainkan server!</li>
-      </ul>
-    </div>
-
-    <!-- iOS -->
-    <div class="tutorial-card">
-      <h3>iOS (Surge 5)</h3>
-      <div class="host-box">
-        <span id="ios-link">https://gtpshost.com/ios/OverallPS-GH</span>
-        <button onclick="copyText('ios-link')">Copy</button>
+      <div class="tutorial-card">
+        <h3><i class="fab fa-apple"></i> iOS</h3>
+        <p>Pakai aplikasi <b>Surge 5</b> untuk mengatur host server.</p>
       </div>
-      <ul>
-        <li>Download Surge 5 dari App Store.</li>
-        <li>Buka file konfigurasi Default.conf.</li>
-        <li>Paste teks host yang sudah disalin.</li>
-        <li>Tap Setup → izinkan semua → selesai.</li>
-      </ul>
-    </div>
-
-    <!-- PC -->
-    <div class="tutorial-card">
-      <h3>PC / Laptop</h3>
-      <div class="host-box">
-        <span id="pc-link">IP: yourserverip.com:17091</span>
-        <button onclick="copyText('pc-link')">Copy</button>
+      <div class="tutorial-card">
+        <h3><i class="fas fa-desktop"></i> PC / Laptop</h3>
+        <p>Atur <b>IP server</b> di file hosts atau gunakan DNS custom.</p>
       </div>
-      <ul>
-        <li>Buka folder Growtopia.</li>
-        <li>Edit file hosts atau gunakan Virtual Host.</li>
-        <li>Masukkan IP server di atas lalu simpan.</li>
-      </ul>
     </div>
   </section>
 
   <!-- Find Us -->
   <section class="find-us">
     <h2>Find Us</h2>
-    <div class="social-buttons">
-      <a href="https://discord.com" class="btn discord">Discord</a>
-      <a href="https://wa.me/628123456789" class="btn whatsapp">WhatsApp</a>
-      <a href="https://youtube.com" class="btn youtube">YouTube</a>
+    <div class="find-buttons">
+      <a href="https://discord.gg/your-link" class="find-btn">
+        <i class="fab fa-discord"></i> Discord Group
+      </a>
+      <a href="https://chat.whatsapp.com/your-link" class="find-btn">
+        <i class="fab fa-whatsapp"></i> WhatsApp Group
+      </a>
+      <a href="https://your-host-link.com" class="find-btn">
+        <i class="fas fa-server"></i> All in One Host
+      </a>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 Overall Private Server | Designed by CalvynGTPS</p>
+    <p>&copy; 2025 Nama Server GTPS. All rights reserved.</p>
   </footer>
-
-  <!-- Script Copy -->
-  <script>
-    function copyText(id) {
-      const text = document.getElementById(id).innerText;
-      navigator.clipboard.writeText(text);
-      alert("Copied: " + text);
-    }
-  </script>
 </body>
 </html>
