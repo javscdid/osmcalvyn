@@ -40,22 +40,50 @@ body {
   opacity: 0;
 }
 
+/* Tombol umum */
+.btn {
+  display: inline-block;
+  padding: 14px 40px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1em;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+.btn i {
+  margin-right: 8px;
+  font-size: 1.2em;
+  vertical-align: middle;
+}
+
 /* Tombol Play */
 .play-btn {
-  padding: 18px 45px;
-  background: #fff;
+  background: linear-gradient(135deg, #ffffff, #dcdcdc);
   color: #000;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1.4em;
-  transition: 0.3s;
-  animation: fadeIn 2s ease forwards;
-  animation-delay: 1s;
-  opacity: 0;
 }
 .play-btn:hover {
-  background: #ddd;
+  background: linear-gradient(135deg, #f2f2f2, #cfcfcf);
+  transform: translateY(-2px);
+}
+
+/* Discord */
+.discord-btn {
+  background: linear-gradient(135deg, #5865F2, #404EED);
+}
+.discord-btn:hover {
+  background: linear-gradient(135deg, #4752C4, #2c37a0);
+  transform: translateY(-2px);
+}
+
+/* WhatsApp */
+.whatsapp-btn {
+  background: linear-gradient(135deg, #25D366, #128C7E);
+}
+.whatsapp-btn:hover {
+  background: linear-gradient(135deg, #1DA851, #0e5e4b);
+  transform: translateY(-2px);
 }
 
 /* Header (gtps.html) */
@@ -89,27 +117,6 @@ body {
   display: flex;
   justify-content: center;
   gap: 15px;
-}
-.discord-btn, .whatsapp-btn {
-  padding: 12px 25px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1em;
-  color: #fff;
-  transition: 0.3s;
-}
-.discord-btn {
-  background: #5865F2;
-}
-.discord-btn:hover {
-  background: #4752C4;
-}
-.whatsapp-btn {
-  background: #25D366;
-}
-.whatsapp-btn:hover {
-  background: #1DA851;
 }
 
 /* Section titles */
