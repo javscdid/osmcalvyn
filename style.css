@@ -20,19 +20,19 @@ body {
 
 /* Logo server */
 .logo {
-  width: 200px;
-  height: 200px;
+  width: 280px;   /* sebelumnya 200px */
+  height: 280px;
   border-radius: 50%; /* bulat */
   object-fit: cover;
-  margin-bottom: 25px;
+  margin-bottom: 35px;
   animation: slideDown 1s ease-out;
 }
 
 /* Nama server */
 .server-name {
-  font-size: 2.4em;
+  font-size: 3em;  /* sebelumnya 2.4em */
   font-weight: bold;
-  margin-bottom: 25px;
+  margin-bottom: 35px;
   opacity: 0;
   animation: fadeIn 2s ease forwards;
   animation-delay: 0.5s;
@@ -40,13 +40,13 @@ body {
 
 /* Tombol Play */
 .play-btn {
-  padding: 14px 30px;
+  padding: 18px 40px;       /* lebih gede */
   background: #fff;
   color: #000;
-  border-radius: 30px;
+  border-radius: 40px;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.1em;
+  font-size: 1.3em;         /* font lebih besar */
   transition: 0.3s;
   opacity: 0;
   animation: fadeIn 2s ease forwards;
