@@ -1,76 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>GTPS</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GTPS - Server Host & Tutorial</title>
+
+  <!-- font & icons (Poppins optional if style.css expects it) -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- your existing style.css (keep the final version you agreed on) -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header -->
-  <header class="header-small">
+  <!-- HEADER -->
+  <header class="header-small" aria-label="Header">
     <img src="logo.png" alt="Server Logo" class="logo-small">
     <div class="server-name">Nama Server</div>
   </header>
 
-  <!-- Server Description -->
-  <section class="description section-left">
-    <h2>Server Description</h2>
+  <!-- DESCRIPTION -->
+  <section class="description section-left" aria-labelledby="desc-title">
+    <h2 id="desc-title">Server Description</h2>
     <p>
-      Selamat datang di <b>Nama Server GTPS</b>!  
-      Server ini hadir dengan fitur seru, komunitas aktif, dan update rutin.  
+      Selamat datang di <b>Nama Server GTPS</b>! Server ini hadir dengan fitur seru, komunitas aktif, dan update rutin.
       Ayo gabung sekarang dan rasakan keseruannya!
     </p>
 
-    <div class="social-buttons">
-      <a href="https://discord.gg/your-link" class="discord-btn btn">
+    <div class="social-buttons" aria-label="Social">
+      <a href="https://discord.gg/your-link" class="discord-btn btn" target="_blank" rel="noopener">
         <i class="fab fa-discord"></i> Join Discord
       </a>
-      <a href="https://chat.whatsapp.com/your-link" class="whatsapp-btn btn">
+      <a href="https://chat.whatsapp.com/your-link" class="whatsapp-btn btn" target="_blank" rel="noopener">
         <i class="fab fa-whatsapp"></i> Join WhatsApp
       </a>
     </div>
   </section>
 
-  <!-- How to Play -->
-  <section class="how-to-play section-left">
-    <h2>How to Play</h2>
-    <div class="tutorial-grid">
-      <div class="tutorial-card">
-        <h3><i class="fab fa-android"></i> Android</h3>
-        <p>Gunakan <b>PowerTunnel</b> + <b>Virtual Host</b> untuk mengakses server.</p>
+  <!-- SERVER HOST -->
+  <section class="server-host section-left" aria-labelledby="host-title">
+    <h2 id="host-title">Server Host</h2>
+
+    <div class="host-links" style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px;">
+      <!-- host links (open in new tab) -->
+      <a href="https://aws.amazon.com/" target="_blank" rel="noopener">Amazon AWS</a>
+      <a href="https://azure.microsoft.com/" target="_blank" rel="noopener">Microsoft Azure</a>
+      <a href="https://cloud.google.com/" target="_blank" rel="noopener">Google Cloud</a>
+      <a href="https://www.vultr.com/" target="_blank" rel="noopener">Vultr VPS</a>
+      <a href="https://www.digitalocean.com/" target="_blank" rel="noopener">DigitalOcean</a>
+    </div>
+
+    <h3 style="margin-top:10px;">Host Links (quick copy)</h3>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-top:8px;">
+      <!-- quick host copy examples -->
+      <div class="host-box" style="display:flex;justify-content:space-between;align-items:center;">
+        <span id="host-aws">https://aws.amazon.com/marketplace</span>
+        <button onclick="copyText('host-aws')" aria-label="Copy AWS link">Copy</button>
       </div>
-      <div class="tutorial-card">
-        <h3><i class="fab fa-apple"></i> iOS</h3>
-        <p>Pakai aplikasi <b>Surge 5</b> untuk mengatur host server.</p>
+
+      <div class="host-box" style="display:flex;justify-content:space-between;align-items:center;">
+        <span id="host-vultr">https://www.vultr.com/products/cloud-compute/</span>
+        <button onclick="copyText('host-vultr')" aria-label="Copy Vultr link">Copy</button>
       </div>
-      <div class="tutorial-card">
-        <h3><i class="fas fa-desktop"></i> PC / Laptop</h3>
-        <p>Atur <b>IP server</b> di file hosts atau gunakan DNS custom.</p>
+
+      <div class="host-box" style="display:flex;justify-content:space-between;align-items:center;">
+        <span id="host-do">https://www.digitalocean.com/products/droplets/</span>
+        <button onclick="copyText('host-do')" aria-label="Copy DigitalOcean link">Copy</button>
+      </div>
+    </div>
+
+    <!-- Tutorial heading -->
+    <h3 style="margin-top:18px;">Tutorial</h3>
+
+    <!-- TUTORIALS -->
+    <div class="tutorial-grid" style="margin-top:10px;">
+      <!-- ANDROID POWER TUNNEL -->
+      <div class="tutorial-card" aria-labelledby="and-title">
+        <h3 id="and-title"><i class="fab fa-android"></i> Android (PowerTunnel)</h3>
+
+        <!-- host box with copy -->
+        <div class="host-box" style="display:flex;justify-content:space-between;align-items:center;">
+          <span id="android-host">https://gtpshost.com/raw/OverallPS-GH</span>
+          <button onclick="copyText('android-host')" aria-label="Copy Android host">Copy</button>
+        </div>
+
+        <ul>
+          <li><b>Download</b> aplikasi PowerTunnel (APK) dari sumber tepercaya.</li>
+          <li>Buka PowerTunnel → menu (≡) → <b>Host Settings</b>.</li>
+          <li>Pilih <b>Import</b> atau <b>Paste</b> host, lalu tempel URL yang disalin.</li>
+          <li>Set update period ke <b>on start</b> atau sesuai instruksi host.</li>
+          <li>Aktifkan PowerTunnel lalu buka Growtopia, server akan muncul.</li>
+        </ul>
+      </div>
+
+      <!-- iOS SURGE 5 -->
+      <div class="tutorial-card" aria-labelledby="ios-title">
+        <h3 id="ios-title"><i class="fab fa-apple"></i> iOS (Surge 5)</h3>
+
+        <div class="host-box" style="display:flex;justify-content:space-between;align-items:center;">
+          <span id="ios-host">https://gtpshost.com/ios/OverallPS-GH</span>
+          <button onclick="copyText('ios-host')" aria-label="Copy iOS host">Copy</button>
+        </div>
+
+        <ul>
+          <li>Install <b>Surge 5</b> dari App Store.</li>
+          <li>Buka Surge → Import / Edit konfigurasi → paste host URL yang disalin.</li>
+          <li>Simpan konfigurasi, aktifkan, lalu jalankan Growtopia.</li>
+          <li>Jika butuh, beri nama konfigurasi agar mudah dipilih kembali.</li>
+        </ul>
+      </div>
+
+      <!-- PC / LAPTOP -->
+      <div class="tutorial-card" aria-labelledby="pc-title">
+        <h3 id="pc-title"><i class="fas fa-desktop"></i> PC / Laptop</h3>
+
+        <div class="host-box" style="display:flex;justify-content:space-between;align-items:center;">
+          <span id="pc-ip">yourserverip.com:17091</span>
+          <button onclick="copyText('pc-ip')" aria-label="Copy PC IP">Copy</button>
+        </div>
+
+        <ul>
+          <li>Buka folder sistem Growtopia atau folder network tool yang kamu gunakan.</li>
+          <li>Edit file <code>hosts</code> (Windows: <code>C:\Windows\System32\drivers\etc\hosts</code>).</li>
+          <li>Tambahkan baris IP server (contoh: <code>123.45.67.89 yourserverip.com</code>), simpan.</li>
+          <li>Jalankan Growtopia lalu login ke server.</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- Find Us -->
-  <section class="find-us">
-    <h2>Find Us</h2>
+  <!-- FIND US -->
+  <section class="find-us" aria-labelledby="find-title">
+    <h2 id="find-title">Find Us</h2>
     <div class="find-buttons">
-      <a href="https://discord.gg/your-link" class="find-btn">
+      <a href="https://discord.gg/your-link" class="find-btn" target="_blank" rel="noopener">
         <i class="fab fa-discord"></i> Discord Group
       </a>
-      <a href="https://chat.whatsapp.com/your-link" class="find-btn">
+      <a href="https://chat.whatsapp.com/your-link" class="find-btn" target="_blank" rel="noopener">
         <i class="fab fa-whatsapp"></i> WhatsApp Group
       </a>
-      <a href="https://your-host-link.com" class="find-btn">
+      <a href="https://your-host-link.com" class="find-btn" target="_blank" rel="noopener">
         <i class="fas fa-server"></i> All in One Host
       </a>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer>
     <p>&copy; 2025 Nama Server GTPS. All rights reserved.</p>
   </footer>
+
+  <!-- COPY SCRIPT (re-usable) -->
+  <script>
+    function copyText(id) {
+      const el = document.getElementById(id);
+      if (!el) return alert('Nothing to copy.');
+      const text = el.innerText.trim();
+      if (!navigator.clipboard) {
+        // fallback
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); alert('Copied: ' + text); } 
+        catch { alert('Copy failed'); }
+        ta.remove();
+        return;
+      }
+      navigator.clipboard.writeText(text).then(() => {
+        // small non-blocking feedback
+        const orig = document.activeElement;
+        alert('Copied: ' + text);
+        if (orig) orig.focus();
+      }, () => {
+        alert('Copy failed');
+      });
+    }
+  </script>
 </body>
 </html>
